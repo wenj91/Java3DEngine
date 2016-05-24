@@ -65,7 +65,7 @@ public class GameFrame extends Frame {
 
 		});
 
-		this.addKeyListener(new FrameKeyListener());
+		this.addKeyListener(new FrameKeyListener(cam));
 
 		ft = new FrameThread();
 		Thread t = new Thread(ft);

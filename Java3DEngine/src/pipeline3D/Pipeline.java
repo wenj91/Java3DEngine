@@ -64,7 +64,7 @@ public class Pipeline {
 
 	}
 
-	// ±ä»»º¯Êı
+	// ï¿½ä»»ï¿½ï¿½ï¿½ï¿½
 	public static void transformRenderList4DV1(RenderList4D rList, Matrix4x4 m,
 			int coorSelect) {
 		ArrayList<PolyF4D> pl = rList.getPolyList();
@@ -158,7 +158,7 @@ public class Pipeline {
 			break;
 		}
 
-	}// transforBasisÖ¸¶¨ÊÇ·ñ¶Ô³¯ÏòÏòÁ¿½øĞĞ±ä»»
+	}// transforBasisÖ¸ï¿½ï¿½ï¿½Ç·ï¿½Ô³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ±ä»»
 
 	public static void modelToWorldObject4D(Object4D obj, int coorSelect) {
 
@@ -176,6 +176,11 @@ public class Pipeline {
 
 	}
 
+	/**
+	 * æ¨¡å‹åæ ‡åˆ°ä¸–ç•Œåæ ‡å˜æ¢çŸ©é˜µ
+	 * @param vPos
+	 * @return
+     */
 	public static Matrix4x4 buildModelToWorldMatrix4x4(Vector4D vPos) {
 		Matrix4x4 m = new Matrix4x4(
 				1, 0, 0, 0, 
@@ -186,6 +191,12 @@ public class Pipeline {
 		return m;
 	}
 
+	/**
+	 *
+	 * @param rList
+	 * @param worldPos
+	 * @param coorSelect
+     */
 	public static void modelToWorldRenderList4DV1(RenderList4D rList,
 			Vector4D worldPos, int coorSelect) {
 		ArrayList<PolyF4D> pl = rList.getPolyList();
@@ -225,6 +236,11 @@ public class Pipeline {
 
 	// ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+	/**
+	 * ä¸–ç•Œåæ ‡åˆ°ç›¸æœºåæ ‡è½¬æ¢
+	 * @param obj
+	 * @param c
+     */
 	public static void worldToCameraObject4D(Object4D obj, Camera4D c) {
 		for (int i = 0; i < obj.vertNums; i++) {
 			Vector4D v  = obj.vertsTrans.get(i).vector4DMulMatrix4x4(c.getMcam());
@@ -250,19 +266,32 @@ public class Pipeline {
 		}
 	}
 
-	// ÔİÊ±²»ÓÃÕâ¸öÄÚÈİ
-	int cullObject4D(Object4D o, Camera4D c, int cullFlags) { // ÌŞ³ıÎïÌå
+	// ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+	/**
+	 * æ¸²æŸ“æ—¶å»é™¤å¤šä½™çš„æ¸²æŸ“é¢
+	 * @param o
+	 * @param c
+	 * @param cullFlags
+     * @return
+     */
+	int cullObject4D(Object4D o, Camera4D c, int cullFlags) { // ï¿½Ş³ï¿½ï¿½ï¿½ï¿½ï¿½
 
 		return 0;
 	}
 
-	// Õâ¸ö·½·¨ÊÇÓÃÀ´ÄÚ´æ¹ÜÀíµÄ,ÔÚJavaÖĞ²»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½Javaï¿½Ğ²ï¿½
 	public static void resetObject4D(Object4D o) {
 
 	}
 
-	public static void removeBackfacesObject4D(Object4D o, Camera4D c) { // ÎïÌå±³ÃæÏû³ı
-		// ÓĞ´ıÌí¼Ó
+	/**
+	 * æ¸²æŸ“æ—¶å»é™¤ç‰©å“èƒŒé¢æ¸²æŸ“
+	 * @param o
+	 * @param c
+     */
+	public static void removeBackfacesObject4D(Object4D o, Camera4D c) { // ï¿½ï¿½ï¿½å±³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½
 		if(null != o){
 			List<Poly4D> pL = o.polyList;
 			for(Iterator<Poly4D> it=pL.iterator(); it.hasNext(); ){
@@ -276,15 +305,15 @@ public class Pipeline {
 					
 				Vector4D vn = p.vList.get(p.index[0]).vector4DBulid(p.vList.get(p.index[1]));
 				Vector4D vv = p.vList.get(p.index[0]).vector4DBulid(p.vList.get(p.index[2]));
-				Vector4D vd = vn.vector4DCross(vv);//ÏòÁ¿²æ³Ë
+				Vector4D vd = vn.vector4DCross(vv);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				
-				//´´½¨ÓÉÊÓµãÖ¸ÏòÏà»úµÄÏòÁ¿
+				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Vector4D vc = p.vList.get(p.index[0]).vector4DBulid(c.getPos());
 				
-				c.getPos().vector4DPrint();
-				p.vList.get(p.index[0]).vector4DPrint();
-				p.vList.get(p.index[1]).vector4DPrint();
-				p.vList.get(p.index[2]).vector4DPrint();
+//				c.getPos().vector4DPrint();
+//				p.vList.get(p.index[0]).vector4DPrint();
+//				p.vList.get(p.index[1]).vector4DPrint();
+//				p.vList.get(p.index[2]).vector4DPrint();
 				
 				float result = vc.vector4DDot(vd);
 				if(result <= 0){
@@ -295,10 +324,10 @@ public class Pipeline {
 	}
 
 	public void removeBackefacesRenderList4DV1(RenderList4D rList, Camera4D c) {
-		// ÓĞ´ıÌí¼Ó
+		// ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½
 	}
 
-	// Ïà»úµ½Í¸ÊÓ×ø±êµÄ±ä»»
+	// ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ä»»
 
 	public Matrix4x4 buildCameraToPerspectiveMatrix4x4(Camera4D c) {
 		Matrix4x4 m = new Matrix4x4(
@@ -363,12 +392,12 @@ public class Pipeline {
 		}
 	}
 
-	// ´ı¶¨---
+	// ï¿½ï¿½ï¿½ï¿½---
 	public static void convertFromHomogeneous4DRenderList4D(RenderList4D rList) {
 	
 	}
 
-	// Í¸ÊÓ×ø±êµ½ÆÁÄ»×ø±êµÄ±ä»»
+	// Í¸ï¿½ï¿½ï¿½ï¿½ï¿½êµ½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½Ä±ä»»
 	public static void perspectiveToScreenObject4D(Object4D obj, Camera4D c) {
 		float a = (0.5f * c.getViewportWidth() - 0.5f);
 		float b = (0.5f * c.getViewportHeight() - 0.5f);
@@ -413,7 +442,7 @@ public class Pipeline {
 
 	}
 
-	// ºÏ²¢Í¸ÊÓ±ä»»ºÍÆÁÄ»±ä»»/////´ıŒ¬F.........
+	// ï¿½Ï²ï¿½Í¸ï¿½Ó±ä»»ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ä»»/////ï¿½ï¿½ï¿½ï¿½ï¿½F.........
 	public static void cameraToPerspectiveScreenObject4D(Object4D obj,
 			Camera4D c) {
 //		float a = (float) (0.5f * c.viewportWidth - 0.5f);
@@ -461,7 +490,13 @@ public class Pipeline {
 		
 	}
 
-	// äÖÈ¾¼¸ºÎÌå
+	// ï¿½ï¿½È¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+
+	/**
+	 * ç»˜åˆ¶å¯¹è±¡
+	 * @param obj
+	 * @param g
+     */
 	public static void drawObject4D(Object4D obj, Graphics g) {
 		for (int i = 0; i < obj.polyNum; i++) {
 			Poly4D p = obj.polyList.get(i);
@@ -488,6 +523,11 @@ public class Pipeline {
 		}
 	}
 
+	/**
+	 * ç»˜åˆ¶å¯¹è±¡åˆ—è¡¨
+	 * @param rList
+	 * @param g
+     */
 	public static void drawRenderList4D(RenderList4D rList, Graphics g) {
 		ArrayList<PolyF4D> pl = rList.getPolyList();
 		for (int index = 0; index < rList.getPolyNum(); index++) {

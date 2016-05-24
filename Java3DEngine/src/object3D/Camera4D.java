@@ -391,4 +391,14 @@ public class Camera4D {
 		this.pos = pos;
 	}
 
+
+	public Vector4D getDir() {
+		return dir;
+	}
+
+	public void setDir(Vector4D dir) {
+		this.dir = dir;
+	}
+
+
 }
