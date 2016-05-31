@@ -35,7 +35,7 @@ public class FrameKeyListener implements KeyListener {
 			break;
 		case KeyEvent.VK_LEFT:
 			//camPos.x--;
-			cam.buildCamera4DV1MatrixUVN(100);
+			cam.buildCamera4DV1MatrixUVN(0);
 			break;
 		case KeyEvent.VK_RIGHT:
 			//camPos.x++;
