@@ -14,19 +14,19 @@ public class Const3D {
 	public static final float PI_DIV_4 = 0.785398163f;
 	public static final float PI_INV = 0.318309886f;
 	
-	//Óë¶¨µãÊıÏà¹ØµÄ³£Á¿
+	//ä¸å®šç‚¹æ•°ç›¸å…³çš„å¸¸é‡
 	public static final int FIXP16_SHIFT  = 16;
 	public static final int FIXP16_MAG = 65536;
 	public static final int FIXP16_DP_MASK = 0x0000ffff;
 	public static final int FIXP16_WP_MASK = 0xffff0000;
 	public static final int FIXP16_ROUND_UP = 0x00008000;
 
-	//Õë¶Ô·Ç³£Ğ¡µÄÊı
+	//é’ˆå¯¹éå¸¸å°çš„æ•°
 	public static final float EPSILON_E4 = ((float)1E-4);
 	public static final float EPSILON_E5 = ((float)1E-5);
 	public static final float EPSILON_E6 = ((float)1E-6);
 
-	//²ÎÊı»¯·½³Ì³£Á¿
+	//å‚æ•°åŒ–æ–¹ç¨‹å¸¸é‡
 	public static final int PARAM_LINE_NO_INTERSECT = 0;
 	public static final int PARAM_LINE_INTERSECT_IN_SEGMENT = 1;
 	public static final int PARAM_LINE_INTERSECT_OUT_SEGMENT = 2;
@@ -52,21 +52,21 @@ public class Const3D {
 	public static final int CAM_MODEL_EULER = 0;
 	public static final int CAM_MODEL_UVN = 1;
 
-	public static final int TRANSFORM_LOCAL_ONLY = 0 ;//¶Ô¾Ö²¿/Ä£ĞÍ¶¥µãÁĞ±í½øĞĞ±ä»»
-	public static final int TRANSFORM_TRANS_ONLY = 1 ;//¶Ô±ä»»ºóµÄ¶¥µãÁĞ±í½øĞĞ±ä»»
-	public static final int TRANSFORM_LOCAL_TO_TRANS = 2 ;//¶Ô¾Ö²¿¶¥µãÁĞ±í½øĞĞ±ä»»
+	public static final int TRANSFORM_LOCAL_ONLY = 0 ;//å¯¹å±€éƒ¨/æ¨¡å‹é¡¶ç‚¹åˆ—è¡¨è¿›è¡Œå˜æ¢
+	public static final int TRANSFORM_TRANS_ONLY = 1 ;//å¯¹å˜æ¢åçš„é¡¶ç‚¹åˆ—è¡¨è¿›è¡Œå˜æ¢
+	public static final int TRANSFORM_LOCAL_TO_TRANS = 2 ;//å¯¹å±€éƒ¨é¡¶ç‚¹åˆ—è¡¨è¿›è¡Œå˜æ¢
 
-	//ÌŞ³ı±êÖ¾
+	//å‰”é™¤æ ‡å¿—
 	public static final int CULL_OBJECT_X_PLANE = 0x0001;
 	public static final int CULL_OBJECT_Y_PLANE = 0x0002;
 	public static final int CULL_OBJECT_Z_PLANE = 0x0004;
 	//public static final int CULL_OBJECT_XYZ_PLANES (CULL_OBJECT_X_PLANE | CULL_OBJECT_Y_PLANE | CULL_OBJECT_Z_PLANE)
 
-	//ÎïÌå×´Ì¬
+	//ç‰©ä½“çŠ¶æ€
 	public static final int OBJECT4DV1_STATE_ACTIVE = 0x0001;
 	public static final int OBJECT4DV1_STATE_VISIBLE = 0x0002;
 	public static final int OBJECT4DV1_STATE_CULLED = 0x0004;
-	//Ïà»úĞı×ªË³Ğò¶ÔÓ¦µÄÖµ
+	//ç›¸æœºæ—‹è½¬é¡ºåºå¯¹åº”çš„å€¼
 	public static final int CAM_ROT_SEQ_XYZ = 0;
 	public static final int CAM_ROT_SEQ_YXZ = 1;
 	public static final int CAM_ROT_SEQ_XZY = 2;

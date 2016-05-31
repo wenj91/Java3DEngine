@@ -46,7 +46,7 @@ public class Quat {
 			return q;
 	}
 	
-	public Quat quatConjugate(){//Çó¹²éîËÄÔªÊı
+	public Quat quatConjugate(){//æ±‚å…±è½­å››å…ƒæ•°
 		Quat q = new Quat();
 		
 		q.q0 = this.q0;
@@ -68,16 +68,16 @@ public class Quat {
 	} 
 	
 	/**
-	 * ÇóËÄÔªÊı·¶Êı
-	 * @return ËÄÔªÊı·¶Êı(Ò²¾ÍÊÇQuatµÄ³¤¶È)
+	 * æ±‚å››å…ƒæ•°èŒƒæ•°
+	 * @return å››å…ƒæ•°èŒƒæ•°(ä¹Ÿå°±æ˜¯Quatçš„é•¿åº¦)
 	 */
 	public float quatNorm(){
 		return ((float)Math.sqrt(q0*q0 + qv.x*qv.x + qv.y*qv.y + qv.z*qv.z));
 	}
 	
 	/**
-	 * ÇóËÄÔªÊı·¶ÊıµÄÆ½·½
-	 * @return ËÄÔªÊı·¶ÊıµÄÆ½·½(Ò²¾ÍÊÇQuatµÄ³¤¶ÈµÄÆ½·½)
+	 * æ±‚å››å…ƒæ•°èŒƒæ•°çš„å¹³æ–¹
+	 * @return å››å…ƒæ•°èŒƒæ•°çš„å¹³æ–¹(ä¹Ÿå°±æ˜¯Quatçš„é•¿åº¦çš„å¹³æ–¹)
 	 */
 	public float quatNorm2(){
 		return (q0*q0 + qv.x*qv.x + qv.y*qv.y + qv.z*qv.z);

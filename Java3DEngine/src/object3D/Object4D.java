@@ -19,11 +19,11 @@ public class Object4D {
 	public Vector4D ux, uy, uz;
 	
 	public int polyNum;
-	public ArrayList<Poly4D> polyList = new ArrayList<Poly4D>();//组成object的面列表
+	public ArrayList<Poly4D> polyList = new ArrayList<Poly4D>();//缁勬垚object鐨勯潰鍒楄〃
 	
 	public int vertNums;
-	public ArrayList<Vector4D> vertsLocal = new ArrayList<Vector4D>();//顶点列表
-	public ArrayList<Vector4D> vertsTrans = new ArrayList<Vector4D>();//存储改变后的顶点
+	public ArrayList<Vector4D> vertsLocal = new ArrayList<Vector4D>();//椤剁偣鍒楄〃
+	public ArrayList<Vector4D> vertsTrans = new ArrayList<Vector4D>();//瀛樺偍鏀瑰彉鍚庣殑椤剁偣
 	
 
 }

@@ -64,7 +64,7 @@ public class Matrix2x2 {
 		
 		float det = this.matrix2x2Det();
 		if(Math.abs(det) < Const3D.EPSILON_E5) {
-			System.out.println("´Ë¾ØÕóÎÞÄæ¾ØÕó!");
+			System.out.println("æ­¤çŸ©é˜µæ— é€†çŸ©é˜µ!");
 			return null;
 		}
 		

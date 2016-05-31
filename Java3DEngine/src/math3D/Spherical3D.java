@@ -1,9 +1,9 @@
 package math3D;
 
 public class Spherical3D {
-	public float p; //到原点的距离
-	public float theta; //线段o->p和正z轴之间的夹角
-	public float phi; //线段o->p在x-y平面上的投影与正x轴之间的夹角
+	public float p; //鍒板師鐐圭殑璺濈
+	public float theta; //绾挎o->p鍜屾z杞翠箣闂寸殑澶硅
+	public float phi; //绾挎o->p鍦▁-y骞抽潰涓婄殑鎶曞奖涓庢x杞翠箣闂寸殑澶硅
 	
 	public Spherical3D(){
 		this.p = 0;

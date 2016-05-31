@@ -85,7 +85,7 @@ public class Matrix3x3 {
 		
 		float det = this.matrix3x3Det();
 		if(Math.abs(det) < Const3D.EPSILON_E5){
-			System.out.println("´Ë¾ØÕóÎÞÄæ¾ØÕó!");
+			System.out.println("æ­¤çŸ©é˜µæ— é€†çŸ©é˜µ!");
 			return null;
 		}
 		

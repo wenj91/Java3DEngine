@@ -13,53 +13,53 @@ public class Camera4D {
 	Vector4D pos;
 	Vector4D dir;
 
-	Vector4D u; // UVNÏà»úÄ£ĞÍµÄ³¯ÏòÏòÁ¿
+	Vector4D u; // UVNç›¸æœºæ¨¡å‹çš„æœå‘å‘é‡
 	Vector4D v;
 	Vector4D n;
 
 	Vector4D target;
 
-	private float viewDist; // Ë®Æ½ÊÓ¾àºÍ´¹Ö±ÊÓ¾à
+	private float viewDist; // æ°´å¹³è§†è·å’Œå‚ç›´è§†è·
 
-	float fov; // ÊÓ½Ç
+	float fov; // è§†è§’
 
-	// 3D²Ã¼ôÃæ
-	// Èç¹ûÊÓÒ°²»ÊÇ90¡ã,3D²Ã¼ôÃæ·½³Ì½«ÎªÒ»°ãĞÔÆ½Ãæ·½³Ì
-	float nearClipPlaneZ; // ½ü²Ã¼ôÃæ
-	float farClipPlaneZ; // Ô¶²Ã¼ôÃæ
+	// 3Dè£å‰ªé¢
+	// å¦‚æœè§†é‡ä¸æ˜¯90Â°,3Dè£å‰ªé¢æ–¹ç¨‹å°†ä¸ºä¸€èˆ¬æ€§å¹³é¢æ–¹ç¨‹
+	float nearClipPlaneZ; // è¿‘è£å‰ªé¢
+	float farClipPlaneZ; // è¿œè£å‰ªé¢
 
-	Plane3D rtClipPlane; // ÓÒ²Ã¼ôÃæ
-	Plane3D ltClipPlane; // ×ó²Ã¼ôÃæ
-	Plane3D tpClipPlane; // ÉÏ²Ã¼ôÃæ
-	Plane3D btClipPlane; // ÏÂ²Ã¼ôÃæ
+	Plane3D rtClipPlane; // å³è£å‰ªé¢
+	Plane3D ltClipPlane; // å·¦è£å‰ªé¢
+	Plane3D tpClipPlane; // ä¸Šè£å‰ªé¢
+	Plane3D btClipPlane; // ä¸‹è£å‰ªé¢
 
-	float viewPlaneWidth; // ÊÓÆ½ÃæµÄ¿í¶ÈºÍ¸ß¶È
+	float viewPlaneWidth; // è§†å¹³é¢çš„å®½åº¦å’Œé«˜åº¦
 	float viewPlaneHeight;
 
-	// ÆÁÄ»ºÍÊÓ¿ÚÊÇÍ¬Òå´Ê
+	// å±å¹•å’Œè§†å£æ˜¯åŒä¹‰è¯
 	private float viewportWidth;
 	private float viewportHeight;
-	float viewportCenterX; // ÊÓ¿ÚÖĞĞÄ
+	float viewportCenterX; // è§†å£ä¸­å¿ƒ
 	float viewportCenterY;
 
-	// ¿í¸ß±È;
+	// å®½é«˜æ¯”;
 	private float aspectRatio;
 
-	// ÊÇ·ñĞèÒªÏÂÊö¾ØÕóÈ¡¾öÓÚ±ä»»·½·¨
-	// ÀıÈç,ÒÔÊÖ¹¤·½Ê½½øĞĞÍ¸ÊÓ±ä»»,ÆÁÄ»±ä»»Ê±,²»ĞèÒªÕâĞ©¾ØÕó
-	// È»¶øÌá¹©ÕâĞ©¾ØÕóÌá¸ßÁËÁé»îĞÔ
+	// æ˜¯å¦éœ€è¦ä¸‹è¿°çŸ©é˜µå–å†³äºå˜æ¢æ–¹æ³•
+	// ä¾‹å¦‚,ä»¥æ‰‹å·¥æ–¹å¼è¿›è¡Œé€è§†å˜æ¢,å±å¹•å˜æ¢æ—¶,ä¸éœ€è¦è¿™äº›çŸ©é˜µ
+	// ç„¶è€Œæä¾›è¿™äº›çŸ©é˜µæé«˜äº†çµæ´»æ€§
 
-	private Matrix4x4 mcam = new Matrix4x4(); // ÓÃÓÚ´æ´¢ÊÀ½ç×ø±êµ½Ïà»ú×ø±ê±ä»»¾ØÕó
-	Matrix4x4 mper = new Matrix4x4(); // ÓÃÓÚ´æ´¢Ïà»ú×ø±êµ½Í¸ÊÓ×ø±ê±ä»»¾ØÕó
-	Matrix4x4 mscr = new Matrix4x4(); // ÓÃÓÚ´æ´¢Í¸ÊÓ×ø±êµ½ÆÁÄ»×ø±ê±ä»»¾ØÕó
+	private Matrix4x4 mcam = new Matrix4x4(); // ç”¨äºå­˜å‚¨ä¸–ç•Œåæ ‡åˆ°ç›¸æœºåæ ‡å˜æ¢çŸ©é˜µ
+	Matrix4x4 mper = new Matrix4x4(); // ç”¨äºå­˜å‚¨ç›¸æœºåæ ‡åˆ°é€è§†åæ ‡å˜æ¢çŸ©é˜µ
+	Matrix4x4 mscr = new Matrix4x4(); // ç”¨äºå­˜å‚¨é€è§†åæ ‡åˆ°å±å¹•åæ ‡å˜æ¢çŸ©é˜µ
 
-	public void initCamera4DV1(int camAttr, // Ïà»úÊôĞÔ
-			Vector4D camPos, // Ïà»úµÄ³õÊ¼Î»ÖÃ
-			Vector4D camDir, // Ïà»úµÄ³õÊ¼½Ç¶È
-			Vector4D camTarget, // UVNÏà»úµÄ³õÊ¼Ä¿±êÎ»ÖÃ
-			float nearCilpZ, float farClipZ, // ½üÔ¶²Ã¼ôÃæ
-			float fov, // ÊÓ½Ç
-			float viewportWidth, float viewportHeight) { // ÆÁÄ»µÄ´óĞ¡
+	public void initCamera4DV1(int camAttr, // ç›¸æœºå±æ€§
+			Vector4D camPos, // ç›¸æœºçš„åˆå§‹ä½ç½®
+			Vector4D camDir, // ç›¸æœºçš„åˆå§‹è§’åº¦
+			Vector4D camTarget, // UVNç›¸æœºçš„åˆå§‹ç›®æ ‡ä½ç½®
+			float nearCilpZ, float farClipZ, // è¿‘è¿œè£å‰ªé¢
+			float fov, // è§†è§’
+			float viewportWidth, float viewportHeight) { // å±å¹•çš„å¤§å°
 
 		this.attr = camAttr;
 
@@ -100,14 +100,14 @@ public class Camera4D {
 
 		this.setViewDist((0.5f) * (this.viewPlaneWidth) * tanFovDiv2);
 		if (fov == 90) {
-			Vector3D ptOrigin = new Vector3D(); // ²Ã¼ôÃæÉÏµÄÒ»¸öµã,Ö±½ÓÈ¡Ïà»úÎ»ÖÃ×÷ÎªÃæÉÏµÄÒ»¸öµã
+			Vector3D ptOrigin = new Vector3D(); // è£å‰ªé¢ä¸Šçš„ä¸€ä¸ªç‚¹,ç›´æ¥å–ç›¸æœºä½ç½®ä½œä¸ºé¢ä¸Šçš„ä¸€ä¸ªç‚¹
 			ptOrigin.x = camPos.x;
 			ptOrigin.y = camPos.y;
 			ptOrigin.z = camPos.z;
 
-			Vector3D vn; // Ãæ·¨Ïß
+			Vector3D vn; // é¢æ³•çº¿
 
-			// ÓÒ²Ã¼ôÃæ
+			// å³è£å‰ªé¢
 			//right
 			vn = new Vector3D(1, 0, -1);
 			this.rtClipPlane = new Plane3D(ptOrigin, vn);
@@ -123,15 +123,15 @@ public class Camera4D {
 			// bot
 			vn = new Vector3D(0, -1, -1);
 			this.btClipPlane = new Plane3D(ptOrigin, vn);
-		} else {//µ±ÊÓ½Ç²»Îª90¡ãÊ±
-			Vector3D ptOrigin = new Vector3D(); // ²Ã¼ôÃæÉÏµÄÒ»¸öµã
+		} else {//å½“è§†è§’ä¸ä¸º90Â°æ—¶
+			Vector3D ptOrigin = new Vector3D(); // è£å‰ªé¢ä¸Šçš„ä¸€ä¸ªç‚¹
 			ptOrigin.x = camPos.x;
 			ptOrigin.y = camPos.y;
 			ptOrigin.z = camPos.z;
 			
-			Vector3D vn; // Ãæ·¨Ïß
+			Vector3D vn; // é¢æ³•çº¿
 
-			// ÓÒ²Ã¼ôÃæ
+			// å³è£å‰ªé¢
 			vn = new Vector3D(this.getViewDist(), 0, this.viewPlaneWidth / 2.0f);
 			this.rtClipPlane = new Plane3D(ptOrigin, vn);
 
@@ -150,36 +150,36 @@ public class Camera4D {
 	}
 
 	public void buildCamera4DV1MatrixEuler(int camRotSeq) {
-		Matrix4x4 mtInv, // Ïà»úÆ½ÒÆ¾ØÕóÄæ¾ØÕó
-		mxInv, // Ïà»úÈÆxÖáĞı×ª¾ØÕóÄæ¾ØÕó
-		myInv, // Ïà»úÈÆyÖáĞı×ª¾ØÕóÄæ¾ØÕó
-		mzInv, // Ïà»úÈÆzÖáĞı×ª¾ØÕóÄæ¾ØÕó
-		mRot = new Matrix4x4(), // ×îÖÕ×ÜĞı×ª¾ØÕó
-		mtmp; // ÓÃÓÚ´æ´¢ÁÙÊ±¾ØÕó
+		Matrix4x4 mtInv, // ç›¸æœºå¹³ç§»çŸ©é˜µé€†çŸ©é˜µ
+		mxInv, // ç›¸æœºç»•xè½´æ—‹è½¬çŸ©é˜µé€†çŸ©é˜µ
+		myInv, // ç›¸æœºç»•yè½´æ—‹è½¬çŸ©é˜µé€†çŸ©é˜µ
+		mzInv, // ç›¸æœºç»•zè½´æ—‹è½¬çŸ©é˜µé€†çŸ©é˜µ
+		mRot = new Matrix4x4(), // æœ€ç»ˆæ€»æ—‹è½¬çŸ©é˜µ
+		mtmp; // ç”¨äºå­˜å‚¨ä¸´æ—¶çŸ©é˜µ
 
-		// 1. ¸ù¾İÏà»úÎ»ÖÃ¼ÆËãÏà»úÆ½ÒÆ¾ØÕóµÄÄæ¾ØÕó
+		// 1. æ ¹æ®ç›¸æœºä½ç½®è®¡ç®—ç›¸æœºå¹³ç§»çŸ©é˜µçš„é€†çŸ©é˜µ
 		mtInv = new Matrix4x4(
 				1, 0, 0, 0, 
 				0, 1, 0, 0, 
 				0, 0, 1, 0, 
 				-this.pos.x, -this.pos.y, -this.pos.z, 1);
 
-		// 2. ´´½¨Ğı×ª¾ØÕóµÄÄæ¾ØÕó
-		// Òª¼ÆËãÕı¹æĞı×ª¾ØÕóµÄÄæ¾ØÕó,¿ÉÒÔ½«Æä×ªÖÃ
-		// Ò²¿ÉÒÔ½«Ã¿¸öĞı×ª½Ç¶ÈÈ¡¸º
+		// 2. åˆ›å»ºæ—‹è½¬çŸ©é˜µçš„é€†çŸ©é˜µ
+		// è¦è®¡ç®—æ­£è§„æ—‹è½¬çŸ©é˜µçš„é€†çŸ©é˜µ,å¯ä»¥å°†å…¶è½¬ç½®
+		// ä¹Ÿå¯ä»¥å°†æ¯ä¸ªæ—‹è½¬è§’åº¦å–è´Ÿ
 
-		// Ê×ÏÈ¼ÆËãÈı¸öĞı×ª¾ØÕóµÄÄæ¾ØÕó
+		// é¦–å…ˆè®¡ç®—ä¸‰ä¸ªæ—‹è½¬çŸ©é˜µçš„é€†çŸ©é˜µ
 
-		// ÌáÈ¡Å·À­½Ç¶È
+		// æå–æ¬§æ‹‰è§’åº¦
 		float thetaX = this.dir.x;
 		float thetaY = this.dir.y;
 		float thetaZ = this.dir.z;
 
-		// ¼ÆËã½Ç¶ÈxµÄÕıÏÒºÍÓàÏÒ
+		// è®¡ç®—è§’åº¦xçš„æ­£å¼¦å’Œä½™å¼¦
 		float cosTheta = (float) Math.cos(Math.toRadians(thetaX));
 		float sinTheta = (float) -Math.sin(Math.toRadians(thetaX));
 
-		// ½¨Á¢¾ØÕó
+		// å»ºç«‹çŸ©é˜µ
 		mxInv = new Matrix4x4(
 				1, 0, 0, 0, 
 				0, cosTheta, sinTheta, 0, 
@@ -204,7 +204,7 @@ public class Camera4D {
 				0, 0, 1, 0, 
 				0, 0, 0, 1);
 
-		// ÏÖÔÚ¼ÆËãÄæĞı×ª¾ØÕóµÄ³Ë»ı
+		// ç°åœ¨è®¡ç®—é€†æ—‹è½¬çŸ©é˜µçš„ä¹˜ç§¯
 		switch (camRotSeq) {
 		case Const3D.CAM_ROT_SEQ_XYZ:
 			mtmp = mxInv.matrix4x4Mul(myInv);
@@ -240,8 +240,8 @@ public class Camera4D {
 			break;
 		}
 
-		// ÏÖÔÚmRotÄæĞı×ª¾ØÕóµÄ³Ë»ı
-		// ½ÓÏÂÀ´½«Æä³ËÒÔÄæÆ½ÒÆ¾ØÕó,²¢½«½á¹û´æ´¢µ½Ïà»ú¶ÔÏóµÄÏà»ú±ä»»¾ØÕóÖĞ
+		// ç°åœ¨mRoté€†æ—‹è½¬çŸ©é˜µçš„ä¹˜ç§¯
+		// æ¥ä¸‹æ¥å°†å…¶ä¹˜ä»¥é€†å¹³ç§»çŸ©é˜µ,å¹¶å°†ç»“æœå­˜å‚¨åˆ°ç›¸æœºå¯¹è±¡çš„ç›¸æœºå˜æ¢çŸ©é˜µä¸­
 		this.setMcam(mtInv.matrix4x4Mul(mRot));
 
 	}
@@ -249,7 +249,7 @@ public class Camera4D {
 	public void buildCamera4DV1MatrixUVN(int mode){
 		Matrix4x4 mtInv, mtUVN;
 
-		//1. ¸ù¾İÏà»úÎ»ÖÃ´´½¨ÄæÆ½ÒÆ¾ØÕó
+		//1. æ ¹æ®ç›¸æœºä½ç½®åˆ›å»ºé€†å¹³ç§»çŸ©é˜µ
 		mtInv = new Matrix4x4(1, 0, 0, 0,
 				0, 1, 0, 0,
 				0, 0, 1, 0,
@@ -260,43 +260,43 @@ public class Camera4D {
 //			0, 0, 1, 0,
 //			-pc->pos.x, -pc->pos.y, -pc->pos.z, 1);
 
-		//2. È·¶¨ÈçºÎ¼ÆËãÄ¿±êµã
+		//2. ç¡®å®šå¦‚ä½•è®¡ç®—ç›®æ ‡ç‚¹
 		if(Const3D.UVN_MODE_SPHERICAL == mode){
-			//ÌáÈ¡·½Î»½ÇºÍÑö½Ç
+			//æå–æ–¹ä½è§’å’Œä»°è§’
 			float phi = this.dir.x;
 			float theta = this.dir.y;
 
-			//¼ÆËãÈı½Çº¯Êı
+			//è®¡ç®—ä¸‰è§’å‡½æ•°
 			float sinPhi = (float)Math.sin(phi);
 			float cosPhi = (float)Math.cos(phi);
 
 			float sinTheta = (float)Math.sin(theta);
 			float cosTheta = (float)Math.cos(theta);
 
-			//¼ÆËãÄ¿±êµãÔÚµ¥Î»ÇòÃæÉÏµÄÎ»ÖÃ(x, y, z)
+			//è®¡ç®—ç›®æ ‡ç‚¹åœ¨å•ä½çƒé¢ä¸Šçš„ä½ç½®(x, y, z)
 			this.target.x = -1*sinPhi*sinTheta;
 			this.target.y = 1*cosPhi;
 			this.target.z = 1*sinPhi*cosTheta;
 		}
 
-		//ÖÁ´ËÓĞÁËÎªÖØĞÂ¼ÆËãUVNËùĞèÒªµÄÈ«²¿²ÎÊı,¹Û²ì²Î¿¼µãºÍÄ¿±êµã
-		//µÚÒ»²½: n = <Ä¿±êÎ»ÖÃ - ¹Û²ì²Î¿¼µã>
+		//è‡³æ­¤æœ‰äº†ä¸ºé‡æ–°è®¡ç®—UVNæ‰€éœ€è¦çš„å…¨éƒ¨å‚æ•°,è§‚å¯Ÿå‚è€ƒç‚¹å’Œç›®æ ‡ç‚¹
+		//ç¬¬ä¸€æ­¥: n = <ç›®æ ‡ä½ç½® - è§‚å¯Ÿå‚è€ƒç‚¹>
 		this.n = this.pos.vector4DBulid(this.target);
 //		vector4DBuild(&pc->pos, &pc->target, &pc->n);
 
-		//µÚ¶ş²½: ½«vÉèÖÃÎª<0, 1, 0>
+		//ç¬¬äºŒæ­¥: å°†vè®¾ç½®ä¸º<0, 1, 0>
 		this.v = new Vector4D(0, 1, 0, 1);
 //		vector4DInitXYZ(&pc->v, 0, 1, 0);
 
-		//µÚÈı²½: u = (v x n)
+		//ç¬¬ä¸‰æ­¥: u = (v x n)
 		this.u = this.v.vector4DCross(this.n);
 //		vector4DCross(&pc->v, &pc->n, &pc->u);
 
-		//µÚËÄ²½: v = (n x u)
+		//ç¬¬å››æ­¥: v = (n x u)
 		this.v = this.n.vector4DCross(u);
 //		vector4DCross(&pc->n, &pc->u, &pc->v);
 
-		//µÚÎå²½: ¶ÔËùÓĞÏòÁ¿¶¼½øĞĞ¹éÒ»»¯
+		//ç¬¬äº”æ­¥: å¯¹æ‰€æœ‰å‘é‡éƒ½è¿›è¡Œå½’ä¸€åŒ–
 		this.u = this.u.vector4DNormalize();
 		this.v = this.v.vector4DNormalize();
 		this.n = this.n.vector4DNormalize();
@@ -305,7 +305,7 @@ public class Camera4D {
 //		vector4DNormalize(&pc->v);
 //		vector4DNormalize(&pc->n);
 
-		//½«uvn´úÈë,µÃµ½uvnĞı×ª¾ØÕó
+		//å°†uvnä»£å…¥,å¾—åˆ°uvnæ—‹è½¬çŸ©é˜µ
 		mtUVN = new Matrix4x4(this.u.x, this.v.x, this.n.x, 0,
 				this.u.y, this.v.y, this.n.y, 0, 
 				this.u.z, this.v.z, this.n.z, 0,
@@ -317,7 +317,7 @@ public class Camera4D {
 //			pc->u.z, pc->v.z, pc->n.z, 0,
 //			0, 0, 0, 1);
 
-		//½«Æ½ÒÆ¾ØÕó³ËÒÔuvn¾ØÕó,²¢½«½á¹û´æ´¢µ½Ïà»ú±ä»»¾ØÕómcamÖĞ
+		//å°†å¹³ç§»çŸ©é˜µä¹˜ä»¥uvnçŸ©é˜µ,å¹¶å°†ç»“æœå­˜å‚¨åˆ°ç›¸æœºå˜æ¢çŸ©é˜µmcamä¸­
 		this.setMcam(mtInv.matrix4x4Mul(mtUVN));
 //		matrix4x4Mul(&mtInv, &mtUVN, &pc->mcam);
 

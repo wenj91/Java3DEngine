@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/main3D/Const3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main3D/FrameKeyListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main3D/GameFrame.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main3D/Test.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Cylindrical3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix1x2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix1x3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix1x4.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix2x2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix3x2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix3x3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix4x3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Matrix4x4.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/ParamLine2D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/ParamLine3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Plane3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Polar2D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Quat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Spherical3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Vector2D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Vector3D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/math3D/Vector4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/object3D/Camera4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/object3D/Object4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/object3D/Poly4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/object3D/PolyF4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/object3D/RenderList4D.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/pipeline3D/Pipeline.java" charset="UTF-16" />
     <file url="PROJECT" charset="GBK" />
   </component>
 </project>

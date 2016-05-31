@@ -6,12 +6,12 @@ import java.util.List;
 
 import math3D.Vector4D;
 
-public class Poly4D {//¼òµ¥ÃæÄ£ĞÍ,¿ªÏúĞ¡,µ«ÊÇµ±ÒÆ¶¯,Ğı×ªµÈ²Ù×÷»áÆÆ»µµôÄ£ĞÍÔ­À´µÄ×ø±êÏµÍ³
+public class Poly4D {//ç®€å•é¢æ¨¡å‹,å¼€é”€å°,ä½†æ˜¯å½“ç§»åŠ¨,æ—‹è½¬ç­‰æ“ä½œä¼šç ´åæ‰æ¨¡å‹åŸæ¥çš„åæ ‡ç³»ç»Ÿ
 
 	public int state;
 	public Color color;
 	public int attr;
 	
-	public List<Vector4D> vList = new ArrayList<Vector4D>(); //´æ´¢¶¥µãµÄ±í
-	public int[] index = new int[3]; //×é³É¶à±ßĞÎµÄ¶¥µãÔÚ±íÖĞµÄĞòºÅ
+	public List<Vector4D> vList = new ArrayList<Vector4D>(); //å­˜å‚¨é¡¶ç‚¹çš„è¡¨
+	public int[] index = new int[3]; //ç»„æˆå¤šè¾¹å½¢çš„é¡¶ç‚¹åœ¨è¡¨ä¸­çš„åºå·
 }

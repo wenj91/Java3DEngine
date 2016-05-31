@@ -28,11 +28,9 @@ public class FrameKeyListener implements KeyListener {
 			System.exit(0);
 			break;
 		case KeyEvent.VK_UP:
-			System.out.println("Test Get It, UP KEY!");
 			camPos.z++;
 			break;
 		case KeyEvent.VK_DOWN:
-			System.out.println("Test Get It, UP KEY!");
 			camPos.z--;
 			break;
 		case KeyEvent.VK_LEFT:

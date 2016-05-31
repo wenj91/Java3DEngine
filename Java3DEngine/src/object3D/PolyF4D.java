@@ -4,13 +4,13 @@ import java.awt.Color;
 
 import math3D.Vector4D;
 
-public class PolyF4D {//¸´ÔÓÃæÄ£ĞÍ, ¿ªÏú»á´óĞ©, µ«ÊÇµ±×÷ÒÆ¶¯,Ğı×ªµÈ²Ù×÷²»»áÆÆ»µµôÄ£ĞÍÔ­ÓĞ×ø±êÏµÍ³
+public class PolyF4D {//å¤æ‚é¢æ¨¡å‹, å¼€é”€ä¼šå¤§äº›, ä½†æ˜¯å½“ä½œç§»åŠ¨,æ—‹è½¬ç­‰æ“ä½œä¸ä¼šç ´åæ‰æ¨¡å‹åŸæœ‰åæ ‡ç³»ç»Ÿ
 	public int state;
 	public Color color;
 	public int attr;
 	
-	public Vector4D[] vList = new Vector4D[3]; //¶¥µãµÄ×ø±ê
-	public Vector4D[] tvList = new Vector4D[3]; //±ä»»ºó¶¥µãµÄ×ø±ê
+	public Vector4D[] vList = new Vector4D[3]; //é¡¶ç‚¹çš„åæ ‡
+	public Vector4D[] tvList = new Vector4D[3]; //å˜æ¢åé¡¶ç‚¹çš„åæ ‡
 	
 	public PolyF4D(){
 		vList[0] = new Vector4D();

@@ -115,7 +115,7 @@ public class GameFrame extends Frame {
 	}
 
 	public void engineInit(){
-		//³õÊ¼»¯ÖùÌå
+		//åˆå§‹åŒ–æŸ±ä½“
 		cube.attr = 0;
 		cube.id = 0;
 		cube.state = Const3D.OBJECT4DV1_STATE_ACTIVE;
@@ -162,12 +162,12 @@ public class GameFrame extends Frame {
 		}
 		
 		cam = new Camera4D();
-	/*	int camAttr, // Ïà»úÀàĞÍ-->UVN || Eula
-		Vector4D camPos, // Ïà»úµÄ³õÊ¼Î»ÖÃ
-		Vector4D camDir, // Ïà»úµÄ³õÊ¼½Ç¶È
-		Vector4D camTarget, // UVNÏà»úµÄ³õÊ¼Ä¿±êÎ»ÖÃ
-		float nearCilpZ, float farClipZ, // ½üÔ¶²Ã¼ôÃæ
-		float fov, // ÊÓ½Ç
+	/*	int camAttr, // ç›¸æœºç±»å‹-->UVN || Eula
+		Vector4D camPos, // ç›¸æœºçš„åˆå§‹ä½ç½®
+		Vector4D camDir, // ç›¸æœºçš„åˆå§‹è§’åº¦
+		Vector4D camTarget, // UVNç›¸æœºçš„åˆå§‹ç›®æ ‡ä½ç½®
+		float nearCilpZ, float farClipZ, // è¿‘è¿œè£å‰ªé¢
+		float fov, // è§†è§’
 		float viewportWidth, float viewportHeight
 		*/
 		cam.initCamera4DV1(Const3D.CAM_MODEL_EULER, camPos, camDir, null,
